@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Website</title>
 
-<!-- فونت کلاسیک -->
+<!-- فونت کلاسیک و ظریف -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- CSS اصلی سایت -->
+<!-- CSS اصلی -->
 <style>
   body {
     margin: 0;
@@ -23,7 +23,7 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
-  /* هدر و منو */
+  /* هدر و آیکون منو */
   .header {
     background-color: #501824;
     padding: 15px 20px;
@@ -54,6 +54,7 @@
     transition: transform 0.3s;
   }
 
+  /* منو */
   .menu {
     position: fixed;
     top: 0;
@@ -92,9 +93,24 @@
     text-align: center;
   }
 
-  /* span ترجمه‌دار */
+  /* متن انگلیسی قابل ترجمه */
   .translatable { cursor: pointer; position: relative; }
 
+  /* کادر ترجمه */
+  .translation-box {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 300px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
 </style>
 </head>
 <body>
@@ -118,8 +134,8 @@
   <!-- راهنمای ترجمه -->
   <div class="tooltip-guide">برای دیدن ترجمه، روی هر جمله نگه دارید و بکشید</div>
 
+  <!-- مثال جمله انگلیسی با ترجمه فارسی -->
   <p>
-    <!-- جمله انگلیسی با ترجمه فارسی -->
     <span class="translatable" data-translation="خوش آمدید!">
       Welcome!
     </span>
@@ -132,7 +148,7 @@
   </p>
 </div>
 
-<!-- کادر ترجمه (می‌تونه در همان فایل JS ایجاد شود اما اینجا اگر بخواهی ثابت باشد) -->
+<!-- کادر ترجمه -->
 <div id="translationBox" class="translation-box"></div>
 
 <!-- JS منو -->
@@ -145,8 +161,8 @@ function toggleMenu() {
 }
 </script>
 
-<!-- لینک به فایل JS ترجمه -->
+<!-- JS ترجمه تعاملی -->
 <script src="translation.js" defer></script>
 
-<"
+</body>
 </html>
