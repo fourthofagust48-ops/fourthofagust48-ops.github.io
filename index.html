@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Website</title>
-<style>
-  /* --- فونت کلاسیک و ظریف --- */
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
+<!-- فونت کلاسیک -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- CSS اصلی سایت -->
+<style>
   body {
     margin: 0;
-    font-family: 'Playfair Display', Georgia, serif; /* فونت کلاسیک و ظریف */
+    font-family: 'Playfair Display', Georgia, serif;
     background-color: #69212e;
     color: white;
   }
@@ -21,7 +23,7 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
-  /* --- هدر و آیکون منو --- */
+  /* هدر و منو */
   .header {
     background-color: #501824;
     padding: 15px 20px;
@@ -41,11 +43,10 @@
   }
 
   .menu-icon {
-    font-size: 36px; /* بزرگ و واضح */
+    font-size: 36px;
     cursor: pointer;
-    color: white; /* سفید ساده */
+    color: white;
     user-select: none;
-    line-height: 1;
   }
 
   .menu-icon.active {
@@ -53,11 +54,10 @@
     transition: transform 0.3s;
   }
 
-  /* --- منو --- */
   .menu {
     position: fixed;
     top: 0;
-    right: -270px; /* مخفی سمت راست */
+    right: -270px;
     width: 270px;
     height: 100%;
     background-color: #501824;
@@ -69,9 +69,7 @@
     box-shadow: -3px 0 6px rgba(0,0,0,0.3);
   }
 
-  .menu.show {
-    right: 0;
-  }
+  .menu.show { right: 0; }
 
   .menu a {
     padding: 15px 25px;
@@ -80,31 +78,23 @@
     font-size: 18px;
   }
 
-  .menu a:hover {
-    background-color: #69212e;
+  .menu a:hover { background-color: #69212e; }
+
+  /* محتوای صفحه */
+  .content { padding: 100px 20px 20px 20px; }
+
+  h2 { font-weight: 600; }
+
+  /* راهنمای ترجمه */
+  .tooltip-guide {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
-  /* --- محتوای صفحه --- */
-  .content {
-    padding: 100px 20px 20px 20px; /* فاصله از هدر */
-  }
+  /* span ترجمه‌دار */
+  .translatable { cursor: pointer; position: relative; }
 
-  h2 {
-    font-weight: 600;
-  }
-
-  /* --- ریسپانسیو --- */
-  @media (max-width: 500px) {
-    .menu {
-      width: 220px;
-    }
-    .menu-icon {
-      font-size: 32px;
-    }
-    .menu a {
-      font-size: 16px;
-    }
-  }
 </style>
 </head>
 <body>
@@ -125,10 +115,27 @@
 
 <!-- محتوای صفحه -->
 <div class="content">
-  <h2>Welcome!</h2>
-  <p>Here you can explore my stories, artworks, and portfolio.</p>
+  <!-- راهنمای ترجمه -->
+  <div class="tooltip-guide">برای دیدن ترجمه، روی هر جمله نگه دارید و بکشید</div>
+
+  <p>
+    <!-- جمله انگلیسی با ترجمه فارسی -->
+    <span class="translatable" data-translation="خوش آمدید!">
+      Welcome!
+    </span>
+  </p>
+
+  <p>
+    <span class="translatable" data-translation="این یک مثال دوم است.">
+      This is a second example.
+    </span>
+  </p>
 </div>
 
+<!-- کادر ترجمه (می‌تونه در همان فایل JS ایجاد شود اما اینجا اگر بخواهی ثابت باشد) -->
+<div id="translationBox" class="translation-box"></div>
+
+<!-- JS منو -->
 <script>
 function toggleMenu() {
   const menu = document.getElementById("menu");
@@ -138,11 +145,9 @@ function toggleMenu() {
 }
 </script>
 
-</body>
-</html>
+<!-- لینک به فایل JS ترجمه -->
+<script src="translation.js" defer></script>
 
-<p>
-  <span class="translatable" data-translation="خوش آمدید!">
-    Welcome!
-  </span>
-</p>
+<"
+  /body>
+</html>
