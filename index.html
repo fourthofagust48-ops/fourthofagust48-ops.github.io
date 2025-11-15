@@ -1,112 +1,16 @@
 <!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>main page</title>
-<style>
-  /* --- settings --- */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #69212e;
-    color: white;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-
-  .header h1 {
-    margin: 0;
-    font-size: 20px;
-  }
-
-
-  
-  /* --- منو --- */
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -250px; /* مخفی سمت راست */
-    width: 250px;
-    height: 100%;
-    background-color: #501824;
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px;
-    transition: right 0.3s ease;
-    z-index: 999;
-  }
-
-  .menu.show {
-    right: 0; /* باز شدن منو */
-  }
-
-  .menu a {
-    padding: 15px 20px;
-    border-bottom: 1px solid #69212e;
-    transition: background 0.2s;
-  }
-
-  .menu a:hover {
-    background-color: #69212e;
-  }
-
-  /* --- محتوای صفحه --- */
-  .content {
-    padding: 80px 20px 20px 20px; /* فاصله از هدر */
-  }
-
-  /* --- ریسپانسیو --- */
-  @media (max-width: 500px) {
-    .menu {
-      width: 200px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<!-- هدر -->
-<div class="header">
-  <h1> AGUST'S ZONE </h1>
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-</div>
-
-<!-- menu -->
-<div class="menu" id="menu">
-  <a href="Portfolio.html">Portfolio</a>
-  <a href="#"> MY DRAWINGS </a>
-  <a href="#"> MY STORIES </a>
-  <a href="#">ABOUT AGUST</a>
-</div>
-
-  
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  const icon = document.querySelector(".menu-icon");
-  menu.classList.toggle("show");
-  icon.classList.toggle("active");
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Website</title>
 <style>
-  /* --- فونت سایت --- */
+  /* --- فونت کلاسیک و ظریف --- */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
   body {
     margin: 0;
-    font-family: 'Times New Roman', Times, Georgia, serif; /* فونت انگلیسی serif */
+    font-family: 'Playfair Display', Georgia, serif; /* فونت کلاسیک و ظریف */
     background-color: #69212e;
     color: white;
   }
@@ -114,7 +18,7 @@ function toggleMenu() {
   a {
     text-decoration: none;
     color: white;
-    font-family: 'Times New Roman', Times, Georgia, serif; /* لینک‌ها هم serif */
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   /* --- هدر و آیکون منو --- */
@@ -128,18 +32,20 @@ function toggleMenu() {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   }
 
   .header h1 {
     margin: 0;
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .menu-icon {
-    font-size: 32px; /* بزرگتر برای دیده شدن */
+    font-size: 36px; /* بزرگ و واضح */
     cursor: pointer;
     color: white; /* سفید ساده */
     user-select: none;
+    line-height: 1;
   }
 
   .menu-icon.active {
@@ -151,15 +57,16 @@ function toggleMenu() {
   .menu {
     position: fixed;
     top: 0;
-    right: -260px; /* مخفی سمت راست */
-    width: 260px;
+    right: -270px; /* مخفی سمت راست */
+    width: 270px;
     height: 100%;
     background-color: #501824;
     display: flex;
     flex-direction: column;
-    padding-top: 60px;
+    padding-top: 70px;
     transition: right 0.3s ease;
     z-index: 999;
+    box-shadow: -3px 0 6px rgba(0,0,0,0.3);
   }
 
   .menu.show {
@@ -167,9 +74,10 @@ function toggleMenu() {
   }
 
   .menu a {
-    padding: 15px 20px;
+    padding: 15px 25px;
     border-bottom: 1px solid #69212e;
     transition: background 0.2s;
+    font-size: 18px;
   }
 
   .menu a:hover {
@@ -178,16 +86,23 @@ function toggleMenu() {
 
   /* --- محتوای صفحه --- */
   .content {
-    padding: 80px 20px 20px 20px; /* فاصله از هدر */
+    padding: 100px 20px 20px 20px; /* فاصله از هدر */
+  }
+
+  h2 {
+    font-weight: 600;
   }
 
   /* --- ریسپانسیو --- */
   @media (max-width: 500px) {
     .menu {
-      width: 200px;
+      width: 220px;
     }
     .menu-icon {
-      font-size: 28px;
+      font-size: 32px;
+    }
+    .menu a {
+      font-size: 16px;
     }
   }
 </style>
